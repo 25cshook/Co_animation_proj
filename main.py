@@ -9,8 +9,8 @@ os.environ['SDL_VIDEO_CENTERED'] = '1'
 pygame.init()
 
 # constants
-WIDTH =400 
-HEIGHT =300
+WIDTH =1440 
+HEIGHT =900
 FPS = 5 
 
 # RGB colors
@@ -32,7 +32,7 @@ my_images = [
 
 # changes size of all images to fit screen
 for i in range(len(my_images)):
-  my_images[i] = pygame.transform.scale(my_images[i],(300, 200))
+  my_images[i] = pygame.transform.scale(my_images[i],(400, 400))
 
 # set Window
 WINDOW = pygame.display.set_mode((WIDTH, HEIGHT))
@@ -40,7 +40,7 @@ pygame.display.set_caption("Lightsaber!")
 WINDOW.fill(white)
 
 # set up your font
-font = pygame.font.Font('./fonts/2p.ttf',8)
+font = pygame.font.Font('./fonts/2p.ttf',15)
 
 # create your text
 text1 = font.render('Code by - Cole Shook and Rowan Pedersen', True, black, white)
@@ -62,7 +62,7 @@ def drawShape():
   global image_count
   if (image_count == 3):
     image_count = 0
-  WINDOW.blit(my_images[image_count], (50, 50))
+  WINDOW.blit(my_images[image_count], (500, 200))
   pygame.display.flip()
   image_count += 1
   
